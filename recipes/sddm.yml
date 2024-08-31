@@ -3,6 +3,7 @@ modules:
     install:
       - sddm
       - sddm-themes
+      - sddm-wayland-generic
       - qt5-qtgraphicaleffects
       - qt5-qtquickcontrols2
       - qt5-qtsvg
@@ -12,4 +13,4 @@ modules:
   - type: systemd
     system:
       enabled:
-        - sddm.service
+        - sddm-boot.service

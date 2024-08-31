@@ -12,6 +12,7 @@ modules: # configured multiple times to highlight how options are overridden
         - com.visualstudio.code-oss
         - com.github.wwmm.easyeffects
         - com.obsproject.Studio
+        - com.github.tchx84.Flatseal
         - io.github.flattool.Warehouse
         - io.github.dvlv.boxbuddyrs
       # remove:
@@ -22,6 +23,7 @@ modules: # configured multiple times to highlight how options are overridden
       repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
       install:
         - org.kde.krita
+        - com.github.flxzt.rnote
         - io.github.tntwise.REAL-Video-Enhancer
         - fr.handbrake.ghb
         - no.mifi.losslesscut
