@@ -6,7 +6,7 @@ modules: # configured multiple times to highlight how options are overridden
       # If no repo information is specified, Flathub will be used by default
       repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
       repo-name: flathub
-      repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
+      repo-title: "Flathub (system-wide)"
       install:
         - org.mozilla.firefox
         - com.visualstudio.code-oss
@@ -18,7 +18,8 @@ modules: # configured multiple times to highlight how options are overridden
 
     user:
       repo-name: flathub-user
-      repo-title: "Flathub (User)
+      repo-title: "Flathub (User)"
+      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
       install:
         - org.kde.krita
         - io.github.tntwise.REAL-Video-Enhancer

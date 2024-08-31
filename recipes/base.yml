@@ -2,8 +2,8 @@ modules:
   - type: akmods
     base: main # if not specified, classic "main" base is used by default
     install:
-    - openrgb
-    - v4l2loopback
+      - openrgb
+      - v4l2loopback
 
   - type: rpm-ostree
     remove:
