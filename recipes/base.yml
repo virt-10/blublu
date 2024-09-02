@@ -9,6 +9,7 @@ modules:
     remove:
       - firefox
       - firefox-langpacks
+      - htop
     install:
     # launcher
       - rofi-wayland
@@ -64,6 +65,9 @@ modules:
 
     # cli tools
       - neovim
+      - fish
+      - fastfetch
+      - btop
       - podman
       - buildah
       - distrobox

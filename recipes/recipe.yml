@@ -16,7 +16,7 @@ modules:
         destination: /
 
   - from-file: base.yml
-  - from-file: sddm.yml
+  # - from-file: sddm.yml
   - from-file: flatpak.yml
   - from-file: hyprland.yml
 
