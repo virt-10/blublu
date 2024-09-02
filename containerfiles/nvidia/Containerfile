@@ -1,11 +1,12 @@
 #FROM ghcr.io/ublue-os/akmods-nvidia-open:fsync-ba-40
 
+COPY containerfiles/nvidia/nvidia-install.sh /tmp/nvidia-install.sh
+
 # Install NVIDIA driver
 RUN --mount=type=cache,dst=/var/cache/rpm-ostree \
     --mount=type=bind,from=ghcr.io/ublue-os/akmods-nvidia:fsync-ba-40,src=/rpms,dst=/tmp/akmods-rpms \
-    curl -Lo /tmp/nvidia-install.sh https://raw.githubusercontent.com/ublue-os/hwe/main/nvidia-install.sh && \
     chmod +x /tmp/nvidia-install.sh && \
-    IMAGE_NAME=base-main FEDORA_MAJOR_VERSION=40 /tmp/nvidia-install.sh && \
+    FEDORA_MAJOR_VERSION=40 /tmp/nvidia-install.sh && \
     rm -f /usr/share/vulkan/icd.d/nouveau_icd.*.json && \
     ln -s libnvidia-ml.so.1 /usr/lib64/libnvidia-ml.so \
     && ostree container commit
