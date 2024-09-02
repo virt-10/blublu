@@ -4,15 +4,11 @@
 # Install kernel-fsync
 RUN --mount=type=cache,dst=/var/cache/rpm-ostree \
     --mount=type=bind,from=ghcr.io/ublue-os/fsync-ba-kernel:40,src=/tmp/rpms,dst=/tmp/fsync-rpms \
-    curl -Lo /etc/yum.repos.d/_copr_kylegospo-bazzite.repo https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-40/kylegospo-bazzite-fedora-40.repo \
-    && rpm-ostree cliwrap install-to-root / && \
+    rpm-ostree cliwrap install-to-root / && \
     rpm-ostree override replace \
         --experimental \
             /tmp/fsync-rpms/kernel-[0-9]*.rpm \
             /tmp/fsync-rpms/kernel-core-*.rpm \
             /tmp/fsync-rpms/kernel-modules-*.rpm \
             /tmp/fsync-rpms/kernel-uki-virt-*.rpm \
-    && rpm-ostree install \
-        scx-scheds \
-    && rm -rf /etc/yum.repos.d/_copr_kylegospo-bazzite.repo \
     && ostree container commit

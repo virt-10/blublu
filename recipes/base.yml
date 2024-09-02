@@ -1,11 +1,7 @@
 modules:
-  - type: akmods
-    base: main # if not specified, classic "main" base is used by default
-    install:
-      - openrgb
-      - v4l2loopback
-
   - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
     remove:
       - firefox
       - firefox-langpacks
@@ -81,6 +77,8 @@ modules:
 
     # opentabletdriver
       - https://github.com/OpenTabletDriver/OpenTabletDriver/releases/latest/download/OpenTabletDriver.rpm
+    # fsync kernel
+      - scx-scheds
 
   - type: brew
     nofile-limits: false # increase nofile limits
