@@ -2,7 +2,7 @@
 
 # Install NVIDIA driver
 RUN --mount=type=cache,dst=/var/cache/rpm-ostree \
-    --mount=type=bind,from=ghcr.io/ublue-os/akmods-nvidia-open:fsync-ba-40,src=/rpms,dst=/tmp/akmods-rpms \
+    --mount=type=bind,from=ghcr.io/ublue-os/akmods-nvidia:fsync-ba-40,src=/rpms,dst=/tmp/akmods-rpms \
     curl -Lo /tmp/nvidia-install.sh https://raw.githubusercontent.com/ublue-os/hwe/main/nvidia-install.sh && \
     chmod +x /tmp/nvidia-install.sh && \
     IMAGE_NAME=base-main FEDORA_MAJOR_VERSION=40 /tmp/nvidia-install.sh && \
