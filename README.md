@@ -8,12 +8,25 @@ After setup, it is recommended you update this README to describe your custom im
 
 > **Warning**  
 > [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
+> Tag: tesla is hardware specific, do not use.
 
 To rebase an existing atomic Fedora installation to the latest build:
 
+Variants:
+```
+hyprland
+cosmic
+```
+
+Tags:
+```
+nvida-open
+tesla
+```
+
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
   ```
-  rpm-ostree rebase ostree-unverified-registry:ghcr.io/blue-build/template:latest
+  rpm-ostree rebase ostree-unverified-registry:ghcr.io/virt-10/blublu-VARIANT:TAG
   ```
 - Reboot to complete the rebase:
   ```
@@ -21,7 +34,7 @@ To rebase an existing atomic Fedora installation to the latest build:
   ```
 - Then rebase to the signed image, like so:
   ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/blue-build/template:latest
+  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/virt-10/blublu-VARIANT:TAG
   ```
 - Reboot again to complete the installation
   ```

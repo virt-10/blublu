@@ -1,0 +1,18 @@
+modules:
+  - type: files
+    files:
+      - source: system/tesla
+        destination: /
+  - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/codifryed/CoolerControl/repo/fedora-%OS_VERSION%/codifryed-CoolerControl-fedora-%OS_VERSION%.repo
+    install:
+      - lm_sensors
+      - dnf-plugins-core
+      - coolercontrol
+      - coolercontrold
+  - type: systemd
+    system:
+      enabled:
+        - nvidia-powerlimit.service
+        - coolercontrold.service

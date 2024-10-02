@@ -1,0 +1,43 @@
+modules:
+  - type: default-flatpaks
+    notify: true # Send notification after install/uninstall is finished (true/false)
+
+    system:
+      # If no repo information is specified, Flathub will be used by default
+      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      repo-name: flathub
+      repo-title: "Flathub (system-wide)"
+      install:
+        - org.mozilla.firefox
+        - io.gitlab.librewolf-community
+        - com.visualstudio.code-oss
+        - dev.zed.Zed
+        - com.github.wwmm.easyeffects
+        - com.github.tchx84.Flatseal
+        - io.github.flattool.Warehouse
+        - io.github.dvlv.boxbuddyrs
+        - org.openrgb.OpenRGB
+      # remove:
+
+    user:
+      repo-name: flathub-user
+      repo-title: "Flathub (User)"
+      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      install:
+        - com.github.johnfactotum.Foliate
+        - org.kde.elisa
+        - com.obsproject.Studio
+        - org.kde.krita
+        - org.blender.Blender
+        - com.valvesoftware.Steam
+        - com.vysp3r.ProtonPlus
+        - com.heroicgameslauncher.hgl
+        - dev.vencord.Vesktop
+        - org.jdownloader.JDownloader
+        - io.mrarm.mcpelauncher
+        - com.github.Rosalie241.RMG
+        - net.kuribo64.melonDS
+        - io.github.lime3ds.Lime3DS
+        - org.ryujinx.Ryujinx
+        - net.pcsx2.PCSX2
+        - net.rpcs3.RPCS3

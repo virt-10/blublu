@@ -1,0 +1,12 @@
+[Unit]
+Description=NVIDIA Settings Configuration
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStartPre=/bin/sleep 15
+ExecStart=/usr/libexec/nvidia-powerlimit.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

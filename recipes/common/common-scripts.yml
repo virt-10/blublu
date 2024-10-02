@@ -1,0 +1,9 @@
+modules:
+  - type: files
+    files:
+      - source: system/common
+        destination: /
+
+  - type: script
+    scripts:
+      - image_name.sh

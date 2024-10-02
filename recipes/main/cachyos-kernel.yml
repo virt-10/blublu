@@ -1,0 +1,45 @@
+# image will be published to ghcr.io/<user>/<name>
+name: blublu-base
+# description will be included in the image's metadata
+description: cachyos kernel with uksmd
+
+alt-tags:
+  - cachyos
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/base-main
+image-version: 40 # latest is also supported if you want new updates ASAP
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  - type: containerfile
+    snippets:
+      - RUN setsebool -P domain_kernel_load_modules on
+  - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-addons/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-addons-fedora-%OS_VERSION%.repo
+    remove:
+      - kernel
+      - kernel-core
+      - kernel-modules
+      - kernel-modules-core
+      - kernel-modules-extra
+    install:
+      - kernel-cachyos
+      - kernel-cachyos-devel-matched
+      - scx-scheds
+      - libcap-ng-devel
+      - procps-ng-devel
+      - uksmd
+    replace:
+      - from-repo: https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-addons/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-addons-fedora-%OS_VERSION%.repo
+        packages:
+          - libbpf
+  - type: systemd
+    system:
+      enabled:
+        - uksmd.service
+        - scx.service
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully

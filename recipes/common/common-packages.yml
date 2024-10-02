@@ -1,0 +1,87 @@
+modules:
+  - type: rpm-ostree
+    repos:
+      # - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
+    remove:
+      - firefox
+      - firefox-langpacks
+      - htop
+    install:
+      # launcher
+      - rofi-wayland
+      - wofi
+
+      # environment
+      - power-profiles-daemon
+      - xorg-x11-server-Xwayland
+      - polkit
+      - xfce-polkit 
+      - xdg-user-dirs
+      - dbus-tools
+      - dbus-daemon
+      - wl-clipboard
+      - playerctl
+      - qt5-qtwayland
+      - qt6-qtwayland
+      - vulkan-validation-layers
+      - vulkan-tools
+      - google-noto-emoji-fonts
+      - ddcutil
+
+      # sound
+      - wireplumber
+      - pipewire
+      - pamixer
+      - pulseaudio-utils
+      - pavucontrol
+
+      # networking
+      - bluez
+      - bluez-tools
+      - blueman
+
+      # file manager
+      - thunar
+      - thunar-archive-plugin 
+      - thunar-volman
+      - xarchiver
+      - imv
+      - p7zip
+      - unrar
+      - gvfs-mtp
+      - gvfs-gphoto2
+      - gvfs-smb
+      - gvfs-nfs
+      - gvfs-fuse
+      - gvfs-archive
+      - android-tools
+
+      # terminal
+      - foot
+
+      # cli tools
+      - neovim
+      - zsh
+      - fastfetch
+      - btop
+      - podman
+      - buildah
+      - distrobox
+      - pipx
+      - tmux
+      - wget
+      - aria2
+      - bat
+
+      # theme and GUI
+      - papirus-icon-theme
+
+      # opentabletdriver
+      - https://github.com/OpenTabletDriver/OpenTabletDriver/releases/latest/download/OpenTabletDriver.rpm
+
+  - type: systemd
+    # system:
+    #   enabled:
+    user:
+      enabled:
+        - opentabletdriver.service
