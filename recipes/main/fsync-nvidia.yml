@@ -1,10 +1,10 @@
 # image will be published to ghcr.io/<user>/<name>
-name: blublu-base
+name: blublu-main
 # description will be included in the image's metadata
 description: fsync kernel with nvidia drivers
 
 alt-tags:
-  - nvidia
+  - fsync-nvidia
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/base-main
@@ -16,8 +16,8 @@ modules:
   - type: containerfile
     snippets:
       - COPY --from=ghcr.io/ublue-os/fsync-kernel:40 /tmp/rpms /tmp/fsync-rpms
-      - COPY --from=ghcr.io/ublue-os/akmods:fsync-40 /rpms /tmp/fsync-rpms
-#      - COPY --from=ghcr.io/ublue-os/akmods-extra:fsync-40 /rpms /tmp/fsync-rpms
+      - COPY --from=ghcr.io/ublue-os/akmods:fsync-40 /rpms /tmp/akmods-rpms
+      - COPY --from=ghcr.io/ublue-os/akmods-extra:fsync-40 /rpms /tmp/akmods-extra-rpms
       - COPY --from=ghcr.io/ublue-os/akmods-nvidia:fsync-40 /rpms /tmp/akmods-rpms
   - type: script
     scripts:

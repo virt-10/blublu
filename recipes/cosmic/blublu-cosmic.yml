@@ -4,10 +4,10 @@ name: blublu-cosmic
 description: Cosmic desktop nvidia open
 
 alt-tags:
-  - nvidia-open
+  - fsync-nvidia-open
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/virt-10/blublu-base
+base-image: ghcr.io/virt-10/blublu-main
 image-version: nvidia-open # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order

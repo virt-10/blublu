@@ -1,5 +1,5 @@
 # image will be published to ghcr.io/<user>/<name>
-name: blublu-base
+name: blublu-main
 # description will be included in the image's metadata
 description: cachyos kernel with uksmd
 

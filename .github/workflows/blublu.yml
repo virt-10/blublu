@@ -25,8 +25,8 @@ jobs:
         recipe:
           # !! Add your recipes here
           - hyprland/blublu-hyprland.yml
-          #- tesla/blublu-hyprland-tesla.yml
-          #- blublu-cosmic.yml
+          - tesla/blublu-hyprland-tesla.yml
+          #- cosmic/blublu-cosmic.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
