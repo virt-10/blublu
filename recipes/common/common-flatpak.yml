@@ -38,6 +38,5 @@ modules:
         - com.github.Rosalie241.RMG
         - net.kuribo64.melonDS
         - io.github.lime3ds.Lime3DS
-        - org.ryujinx.Ryujinx
         - net.pcsx2.PCSX2
         - net.rpcs3.RPCS3

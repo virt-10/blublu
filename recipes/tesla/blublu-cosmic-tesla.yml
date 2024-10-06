@@ -1,7 +1,7 @@
 # image will be published to ghcr.io/<user>/<name>
-name: blublu-hyprland
+name: blublu-cosmic
 # description will be included in the image's metadata
-description: Hyprland nvidia open
+description: Cosmic desktop nvidia
 
 alt-tags:
   - fsync-tesla
@@ -20,6 +20,6 @@ modules:
   - from-file: common/sddm-packages.yml
   - from-file: common/sddm-systemd.yml
   - from-file: tesla/tesla-packages.yml
-  - from-file: hyprland/hyprland-packages.yml
+  - from-file: cosmic/cosmic-packages.yml
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully

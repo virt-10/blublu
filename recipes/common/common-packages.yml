@@ -1,16 +1,13 @@
 modules:
   - type: rpm-ostree
     repos:
+      - https://copr.fedorainfracloud.org/coprs/varlad/zellij/repo/fedora-%OS_VERSION%/varlad-zellij-fedora-%OS_VERSION%.repo
       # - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
     remove:
       - firefox
       - firefox-langpacks
       - htop
     install:
-      # launcher
-      - rofi-wayland
-      - wofi
-
       # environment
       - power-profiles-daemon
       - xorg-x11-server-Xwayland
@@ -40,12 +37,8 @@ modules:
       - bluez-tools
       - blueman
 
-      # file manager
-      - thunar
-      - thunar-archive-plugin 
-      - thunar-volman
+      #files
       - xarchiver
-      - imv
       - p7zip
       - unrar
       - gvfs-mtp
@@ -55,12 +48,15 @@ modules:
       - gvfs-fuse
       - gvfs-archive
       - android-tools
+      - imv
+      - mpv
 
       # terminal
       - foot
 
       # cli tools
       - neovim
+      - fish
       - zsh
       - fastfetch
       - btop
@@ -72,6 +68,8 @@ modules:
       - wget
       - aria2
       - bat
+      - eza
+      - zellij
 
       # theme and GUI
       - papirus-icon-theme

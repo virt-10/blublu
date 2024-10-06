@@ -12,3 +12,10 @@ modules:
       - hyprshot
       - xdg-desktop-portal-hyprland
       - xdg-desktop-portal-gtk
+      # launcher
+      - rofi-wayland
+      - wofi
+      # file manager
+      - thunar
+      - thunar-archive-plugin 
+      - thunar-volman
