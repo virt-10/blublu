@@ -21,7 +21,7 @@ jobs:
           user: ${{ github.repository_owner }}
           type: container
           token: ${{ github.token }}
-          keep: 50
+          keep: 20
           names: |
             blublu-main
             blublu-hyprland
