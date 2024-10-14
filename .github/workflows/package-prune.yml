@@ -1,11 +1,25 @@
-name: Delete old packages
-uses: SmartsquareGmbH/delete-old-packages@v0.8.1
-with:
-  user: ${{ github.repository_owner }}
-  type: container
-  token: ${{ github.token }}
-  keep: 50
-  names: |
-    blublu-main
-    blublu-hyprland
-    blublu-cosmic
+name: prune
+on:
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * MON'
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**/README.md'
+jobs:
+  pkg-prune:
+    name: Prune container packages
+    uses: SmartsquareGmbH/delete-old-packages@v0.8.1
+    with:
+      user: ${{ github.repository_owner }}
+      type: container
+      token: ${{ github.token }}
+      keep: 50
+      names: |
+        blublu-main
+        blublu-hyprland
+        blublu-cosmic
