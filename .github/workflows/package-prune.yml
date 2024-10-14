@@ -1,0 +1,11 @@
+- name: Delete old packages
+  uses: SmartsquareGmbH/delete-old-packages@v0.8.1
+  with:
+    user: ${{ github.repository_owner }}
+    type: container
+    token: ${{ github.token }}
+    keep: 50
+    names: |
+      blublu-main
+      blublu-hyprland
+      blublu-cosmic

@@ -7,10 +7,10 @@ on:
   push:
     paths-ignore: # don't rebuild if only documentation has changed
       - "**.md"
-      - "recipe/common"
-      - "recipe/hyprland"
-      - "recipe/tesla"
-      - "recipe/cosmic"
+      - "recipes/common"
+      - "recipes/hyprland"
+      - "recipes/tesla"
+      - "recipes/cosmic"
 
   pull_request:
   workflow_dispatch: # allow manually triggering builds
