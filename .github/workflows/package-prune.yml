@@ -12,14 +12,17 @@ on:
       - '**/README.md'
 jobs:
   pkg-prune:
-    name: Prune container packages
-    uses: SmartsquareGmbH/delete-old-packages@v0.8.1
-    with:
-      user: ${{ github.repository_owner }}
-      type: container
-      token: ${{ github.token }}
-      keep: 50
-      names: |
-        blublu-main
-        blublu-hyprland
-        blublu-cosmic
+    name: Prune Container Packages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete Old Packages
+        uses: SmartsquareGmbH/delete-old-packages@v0.8.1
+        with:
+          user: ${{ github.repository_owner }}
+          type: container
+          token: ${{ github.token }}
+          keep: 50
+          names: |
+            blublu-main
+            blublu-hyprland
+            blublu-cosmic
