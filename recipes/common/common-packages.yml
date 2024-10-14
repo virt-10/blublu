@@ -2,7 +2,8 @@ modules:
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/varlad/zellij/repo/fedora-%OS_VERSION%/varlad-zellij-fedora-%OS_VERSION%.repo
-      # - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/che/nerd-fonts/repo/fedora-%OS_VERSION%/che-nerd-fonts-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/kylegospo/obs-vkcapture/repo/fedora-%OS_VERSION%/kylegospo-obs-vkcapture-fedora-%OS_VERSION%.repo?arch=x86_64
     remove:
       - firefox
       - firefox-langpacks
@@ -24,6 +25,9 @@ modules:
       - vulkan-tools
       - google-noto-emoji-fonts
       - ddcutil
+      - papirus-icon-theme
+      - nerd-fonts
+      - twitter-twemoji-fonts
 
       # sound
       - wireplumber
@@ -31,6 +35,12 @@ modules:
       - pamixer
       - pulseaudio-utils
       - pavucontrol
+
+      # vkcapture
+      - libobs_vkcapture.x86_64
+      - libobs_glcapture.x86_64
+      - libobs_vkcapture.i686
+      - libobs_glcapture.i686
 
       # networking
       - bluez
@@ -56,23 +66,19 @@ modules:
 
       # cli tools
       - neovim
-      - fish
       - zsh
       - fastfetch
       - btop
       - podman
+      - podman-compose
       - buildah
       - distrobox
       - pipx
-      - tmux
       - wget
       - aria2
       - bat
       - eza
       - zellij
-
-      # theme and GUI
-      - papirus-icon-theme
 
       # opentabletdriver
       - https://github.com/OpenTabletDriver/OpenTabletDriver/releases/latest/download/OpenTabletDriver.rpm

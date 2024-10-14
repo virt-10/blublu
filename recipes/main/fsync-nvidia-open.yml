@@ -16,11 +16,14 @@ modules:
   - type: containerfile
     snippets:
       - COPY --from=ghcr.io/ublue-os/fsync-kernel:40 /tmp/rpms /tmp/fsync-rpms
-      - COPY --from=ghcr.io/ublue-os/akmods:fsync-40 /rpms /tmp/akmods-rpms
-      - COPY --from=ghcr.io/ublue-os/akmods-extra:fsync-40 /rpms /tmp/akmods-extra-rpms
       - COPY --from=ghcr.io/ublue-os/akmods-nvidia-open:fsync-40 /rpms /tmp/akmods-rpms
   - type: script
     scripts:
       - fsync.sh
       - nvidia.sh
+  - type: akmods
+    base: fsync
+    install:
+      - v4l2loopback
+      - xone
   - type: signing # this sets up the proper policy & signing files for signed images to work fully

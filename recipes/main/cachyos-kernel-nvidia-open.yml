@@ -4,7 +4,7 @@ name: blublu-main
 description: cachyos kernel with uksmd
 
 alt-tags:
-  - cachyos
+  - cachyos-nvidia-open
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/base-main
@@ -16,6 +16,10 @@ modules:
   - type: containerfile
     snippets:
       - RUN setsebool -P domain_kernel_load_modules on
+      - COPY --from=ghcr.io/ublue-os/akmods-nvidia-open:fsync-40 /rpms /tmp/akmods-rpms
+  - type: script
+    scripts:
+      - nvidia-cachyos.sh
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-%OS_VERSION%.repo
@@ -26,9 +30,17 @@ modules:
       - kernel-modules
       - kernel-modules-core
       - kernel-modules-extra
+      - kernel-headers
+      - kernel-devel
+      - akmod-nvidia
     install:
       - kernel-cachyos
+      - kernel-cachyos-nvidia-open
+      - kernel-cachyos-headers
+      - kernel-cachyos-core
+      - kernel-cachyos-modules
       - kernel-cachyos-devel-matched
+      - kernel-cachyos-devel
       - scx-scheds
       - libcap-ng-devel
       - procps-ng-devel

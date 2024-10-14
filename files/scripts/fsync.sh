@@ -13,7 +13,3 @@ rpm-ostree override replace \
         /tmp/fsync-rpms/kernel-core-*.rpm \
         /tmp/fsync-rpms/kernel-modules-*.rpm \
         /tmp/fsync-rpms/kernel-uki-virt-*.rpm
-
-rpm-ostree install \
-    /tmp/akmods-rpms/kmods/*v4l2loopback*.rpm \
-    /tmp/akmods-rpms/kmods/*xone*.rpm
