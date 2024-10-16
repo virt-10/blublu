@@ -3,7 +3,6 @@ modules:
     install:
       - sddm
       - sddm-themes
-      - sddm-wayland-generic
       - qt6-qtdeclarative
       - qt6-qtsvg
       - qt6-qt5compat

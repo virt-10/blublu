@@ -21,3 +21,5 @@ modules:
       - thunar-volman
       # polkit
       - xfce-polkit
+      # sddm
+      - sddm-wayland-generic
