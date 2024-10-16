@@ -1,0 +1,10 @@
+RUN \
+--mount=type=bind,from=ghcr.io/ublue-os/fsync-kernel:40,src=/tmp/rpms,dst=/tmp/fsync-rpms,rw \
+    find /tmp/fsync-rpms \
+    && rpm-ostree override replace \
+        --experimental \
+            /tmp/fsync-rpms/kernel-[0-9]*.rpm \
+            /tmp/fsync-rpms/kernel-core-*.rpm \
+            /tmp/fsync-rpms/kernel-modules-*.rpm \
+            /tmp/fsync-rpms/kernel-uki-virt-*.rpm \
+    && ostree container commit

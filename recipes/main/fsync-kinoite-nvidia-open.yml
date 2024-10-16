@@ -1,13 +1,13 @@
 # image will be published to ghcr.io/<user>/<name>
 name: blublu-main
 # description will be included in the image's metadata
-description: fsync kernel with nvidia drivers
+description: fsync kernel with nvidia open kernel drivers
 
 alt-tags:
-  - fsync-nvidia
+  - fsync-kinoite-nvidia-open
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/base-main
+base-image: ghcr.io/ublue-os/kinoite-main
 image-version: 40 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -16,7 +16,7 @@ modules:
   - type: containerfile
     containerfiles:
       - fsync-kernel
-      - fsync-nvidia
+      - fsync-nvidia-open
   - type: akmods
     base: fsync
     install:

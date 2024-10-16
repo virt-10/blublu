@@ -17,5 +17,7 @@ modules:
       - wofi
       # file manager
       - thunar
-      - thunar-archive-plugin 
+      - thunar-archive-plugin
       - thunar-volman
+      # polkit
+      - xfce-polkit

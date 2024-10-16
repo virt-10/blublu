@@ -4,12 +4,12 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 0 * * MON'
+    - cron: "0 0 * * MON"
   push:
     branches:
       - main
     paths-ignore:
-      - '**/README.md'
+      - "**/README.md"
 jobs:
   pkg-prune:
     name: Prune Container Packages
@@ -25,4 +25,5 @@ jobs:
           names: |
             blublu-main
             blublu-hyprland
+            blublu-kde
             blublu-cosmic
