@@ -80,6 +80,7 @@ modules:
       - wget
       - aria2
       - gum
+      - glow
       - bat
       - eza
       - gh
