@@ -6,6 +6,8 @@
 set -oue pipefail
 
 # Your code goes here.
+KERNEL_FLAVOR="fsync"
+
 if [[ "${KERNEL_FLAVOR}" == "surface" ]]; then
     KERNEL_SUFFIX="surface"
 else
