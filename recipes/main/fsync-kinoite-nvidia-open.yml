@@ -22,4 +22,7 @@ modules:
     install:
       - v4l2loopback
       - xone
+  - type: script
+    scripts:
+      - build-initramfs.sh
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
