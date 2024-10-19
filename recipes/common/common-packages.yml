@@ -5,6 +5,7 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/varlad/zellij/repo/fedora-%OS_VERSION%/varlad-zellij-fedora-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/che/nerd-fonts/repo/fedora-%OS_VERSION%/che-nerd-fonts-fedora-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/kylegospo/obs-vkcapture/repo/fedora-%OS_VERSION%/kylegospo-obs-vkcapture-fedora-%OS_VERSION%.repo?arch=x86_64
+      - https://copr.fedorainfracloud.org/coprs/kylegospo/webapp-manager/repo/fedora-%OS_VERSION%/kylegospo-webapp-manager-fedora-%OS_VERSION%.repo
     keys:
       - https://repo.charm.sh/yum/gpg.key
     remove:
@@ -87,6 +88,9 @@ modules:
       - yq
       - ugrep
       - zellij
+
+      # webapp manager
+      - webapp-manager
 
       # opentabletdriver
       - https://github.com/OpenTabletDriver/OpenTabletDriver/releases/latest/download/OpenTabletDriver.rpm
