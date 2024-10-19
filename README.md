@@ -54,3 +54,10 @@ These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](ht
 ```bash
 cosign verify --key cosign.pub ghcr.io/blue-build/template
 ```
+
+# Credits
+Bazzite: https://github.com/ublue-os/bazzite
+
+SDDM Theme: https://github.com/Keyitdev/sddm-astronaut-theme
+
+Wallpaper: https://www.artstation.com/thomas_dubois
