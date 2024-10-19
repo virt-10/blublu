@@ -12,39 +12,10 @@ modules:
       - firefox
       - firefox-langpacks
       - htop
-    replace:
-      - from-repo: https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-%OS_VERSION%/kylegospo-bazzite-multilib-fedora-%OS_VERSION%.repo?arch=x86_64
-        packages:
-          - mesa-libxatracker
-          - mesa-libglapi
-          - mesa-dri-drivers
-          - mesa-libgbm
-          - mesa-libEGL
-          - mesa-vulkan-drivers
-          - mesa-libGL
-          - pipewire
-          - pipewire-alsa
-          - pipewire-gstreamer
-          - pipewire-jack-audio-connection-kit
-          - pipewire-jack-audio-connection-kit-libs
-          - pipewire-libs
-          - pipewire-pulseaudio
-          - pipewire-utils
-          - pipewire-plugin-libcamera
-          - bluez
-          - bluez-obexd
-          - bluez-cups
-          - bluez-libs
-          - xorg-x11-server-Xwayland
     install:
       # environment
-      - wireplumber
-      - pulseaudio-utils
-      - pamixer
-      - pavucontrol
-      - bluez-tools
-      - blueman
       - power-profiles-daemon
+      - xorg-x11-server-Xwayland
       - polkit
       - xdg-user-dirs
       - dbus-tools
@@ -55,18 +26,29 @@ modules:
       - qt6-qtwayland
       - vulkan-validation-layers
       - vulkan-tools
-      - mesa-libGLU
       - google-noto-emoji-fonts
       - ddcutil
       - papirus-icon-theme
       - nerd-fonts
       - twitter-twemoji-fonts
 
+      # sound
+      - wireplumber
+      - pipewire
+      - pamixer
+      - pulseaudio-utils
+      - pavucontrol
+
       # vkcapture
       - libobs_vkcapture.x86_64
       - libobs_glcapture.x86_64
       - libobs_vkcapture.i686
       - libobs_glcapture.i686
+
+      # networking
+      - bluez
+      - bluez-tools
+      - blueman
 
       #files
       - xarchiver
@@ -117,6 +99,6 @@ modules:
   - type: systemd
     # system:
     #   enabled:
-    #user:
-    #  enabled:
-    #    - opentabletdriver.service
+    user:
+      enabled:
+        - opentabletdriver.service
