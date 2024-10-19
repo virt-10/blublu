@@ -77,6 +77,11 @@ modules:
       - aria2
       - bat
       - eza
+      - gh
+      - glab
+      - tealdeer
+      - yq
+      - ugrep
       - zellij
 
       # opentabletdriver
