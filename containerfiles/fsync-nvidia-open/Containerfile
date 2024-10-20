@@ -1,6 +1,10 @@
 RUN \
---mount=type=bind,from=ghcr.io/ublue-os/akmods-nvidia-open:fsync-40,src=/rpms,dst=/tmp/akmods-rpms,rw \
+    --mount=type=bind,from=ghcr.io/ublue-os/akmods-nvidia-open:fsync-40,src=/rpms,dst=/tmp/akmods-rpms,rw \
     find /tmp/akmods-rpms \
+    && sed -i 's@enabled=0@enabled=1@g' /etc/yum.repos.d/negativo17-fedora-multimedia.repo \
+    && rpm-ostree install \
+    mesa-vdpau-drivers.x86_64 \
+    mesa-vdpau-drivers.i686 \
     && curl -Lo /tmp/nvidia-install.sh https://raw.githubusercontent.com/ublue-os/hwe/main/nvidia-install.sh \
     && chmod +x /tmp/nvidia-install.sh \
     && IMAGE_NAME=base-main FEDORA_MAJOR_VERSION="$(rpm -E %fedora)" /tmp/nvidia-install.sh \
