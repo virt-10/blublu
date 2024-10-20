@@ -90,9 +90,9 @@ modules:
       # opentabletdriver
       - https://github.com/OpenTabletDriver/OpenTabletDriver/releases/latest/download/OpenTabletDriver.rpm
 
-  - type: systemd
-    # system:
-    #   enabled:
-    #user:
-    #  enabled:
-    #    - opentabletdriver.service
+  #- type: systemd
+  # system:
+  #   enabled:
+  #user:
+  #  enabled:
+  #    - opentabletdriver.service
