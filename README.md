@@ -58,6 +58,8 @@ cosign verify --key cosign.pub ghcr.io/blue-build/template
 # Credits
 Bazzite: https://github.com/ublue-os/bazzite
 
+Wayblue: https://github.com/wayblueorg/wayblue
+
 SDDM Theme: https://github.com/Keyitdev/sddm-astronaut-theme
 
 Wallpaper: https://www.artstation.com/thomas_dubois
