@@ -35,12 +35,12 @@ modules:
           - bluez-obexd
           - bluez-cups
           - bluez-libs
-          - xorg-x11-server-Xwayland
       - from-repo: https://copr.fedorainfracloud.org/coprs/sentry/switcheroo-control_discrete/repo/fedora-%OS_VERSION%/sentry-switcheroo-control_discrete-fedora-%OS_VERSION%.repo
         packages:
           - switcheroo-control
     install:
       # environment
+      - xorg-x11-server-Xwayland
       - wireplumber
       - pulseaudio-utils
       - pamixer
