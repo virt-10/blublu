@@ -83,6 +83,7 @@ modules:
       - yq
       - ugrep
       - zellij
+      - yt-dlp
 
       # webapp manager
       - webapp-manager
