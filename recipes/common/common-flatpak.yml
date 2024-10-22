@@ -27,6 +27,7 @@ modules:
         - org.kde.elisa
         - com.obsproject.Studio
         - org.kde.krita
+        - org.inkscape.Inkscape
         - org.blender.Blender
         - com.valvesoftware.Steam
         - com.vysp3r.ProtonPlus
