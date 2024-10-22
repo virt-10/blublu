@@ -7,3 +7,5 @@ modules:
   - type: script
     scripts:
       - image_name.sh
+      - plymouth_theme.sh
+      - build-initramfs.sh

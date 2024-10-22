@@ -6,10 +6,6 @@
 set -oue pipefail
 
 # Your code goes here.
-echo 'Deleting plymouth watermark'
-
-rm -rf /usr/share/plymouth/themes/spinner/watermark.png
-
 echo 'Changing plymouth theme'
 
 plymouthCONF=/usr/share/plymouth/themes/spinner/spinner.plymouth
