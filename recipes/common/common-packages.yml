@@ -37,6 +37,7 @@ modules:
       - papirus-icon-theme
       - nerd-fonts
       - twitter-twemoji-fonts
+      - webapp-manager
 
       # vkcapture
       - libobs_vkcapture.x86_64
@@ -84,9 +85,6 @@ modules:
       - ugrep
       - zellij
       - yt-dlp
-
-      # webapp manager
-      - webapp-manager
 
       # opentabletdriver
       - https://github.com/OpenTabletDriver/OpenTabletDriver/releases/latest/download/OpenTabletDriver.rpm

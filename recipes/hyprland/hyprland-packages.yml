@@ -17,7 +17,7 @@ modules:
       - hyprpaper
       - mpvpaper
       # bar
-      - waybar-git
+      - waybar
       - SwayNotificationCenter
       # launcher
       - rofi-wayland

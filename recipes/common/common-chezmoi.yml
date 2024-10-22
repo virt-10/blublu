@@ -1,5 +1,5 @@
 modules:
   - type: chezmoi
     repository: "https://github.com/virt-10/dotfiles"
-    all-users: false # make users have to enable chezmoi manually
+    all-users: true
     file-conflict-policy: replace

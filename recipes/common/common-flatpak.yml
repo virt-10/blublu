@@ -17,7 +17,6 @@ modules:
         - io.github.flattool.Warehouse
         - io.github.dvlv.boxbuddyrs
         - org.openrgb.OpenRGB
-      # remove:
 
     user:
       repo-name: flathub-user
