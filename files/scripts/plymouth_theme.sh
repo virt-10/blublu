@@ -6,5 +6,20 @@
 set -oue pipefail
 
 # Your code goes here.
-echo 'This is an example shell script'
-echo 'Scripts here will run during build if specified in recipe.yml'
+echo 'Deleting plymouth watermark'
+
+rm -rf /usr/share/plymouth/themes/spinner/watermark.png
+
+echo 'Changing plymouth theme'
+
+plymouthCONF=/usr/share/plymouth/themes/spinner/spinner.plymouth
+
+backgroundSTART=BackgroundStartColor=0xFFFFFF
+backgroundEND=BackgroundEndColor=0xFFFFFF
+progressBB=ProgressBarBackgroundColor=0xCCCCCC
+progressBF=ProgressBarForegroundColor=0x000000
+
+sed -i "s/^BackgroundStartColor=.*/${backgroundSTART}/" "${plymouthCONF}"
+sed -i "s/^BackgroundEndColor=.*/${backgroundEND}/" "${plymouthCONF}"
+sed -i "s/^ProgressBarBackgroundColor=.*/${progressBB}/" "${plymouthCONF}"
+sed -i "s/^ProgressBarForegroundColor=.*/${progressBF}/" "${plymouthCONF}"
