@@ -8,7 +8,7 @@ modules:
       repo-name: flathub
       repo-title: "Flathub (system-wide)"
       install:
-        - org.mozilla.firefox
+        - io.github.zen_browser.zen
         - io.gitlab.librewolf-community
         - com.visualstudio.code-oss
         - dev.zed.Zed
@@ -34,8 +34,5 @@ modules:
         - dev.vencord.Vesktop
         - org.jdownloader.JDownloader
         - io.mrarm.mcpelauncher
-        - com.github.Rosalie241.RMG
-        - net.kuribo64.melonDS
-        - io.github.lime3ds.Lime3DS
         - net.pcsx2.PCSX2
         - net.rpcs3.RPCS3
