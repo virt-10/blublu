@@ -10,6 +10,8 @@ on:
       - "**.md"
       - "recipes/main/*"
       - "containerfiles/*"
+      - "files/system/common/*"
+      - "files/scripts/*"
 
   pull_request:
   workflow_dispatch: # allow manually triggering builds
@@ -31,8 +33,36 @@ jobs:
           #- cosmic/blublu-cosmic.yml
           #- tesla/blublu-cosmic-tesla.yml
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Check for changes in ignored paths
+        id: check_changes
+        run: |
+          git fetch origin main
+          git diff --name-only origin/main...HEAD > changed_files.txt
+          if grep -E '(^\.github/workflows/package-prune\.yml$|\.md$|recipes/main/.*|containerfiles/.*|files/scripts/.*|files/system/common/.*)' changed_files.txt; then
+              echo "Detected changes in paths-ignore."
+              commit_date=$(git log -1 --format=%cd --date=unix)
+              current_date=$(date +%s)
+              age_days=$(( (current_date - commit_date) / 86400 ))
+              if [[ "${age_days}" -lt 1 ]]; then
+                  echo "Commit is less than one day old. Skipping build."
+                  echo "skip=true" >> "${GITHUB_ENV}"
+              else
+                  echo "Commit is older than one day. Proceeding with build."
+                  echo "skip=false" >> "${GITHUB_ENV}"
+              fi
+          else
+              echo "No changes in paths-ignore. Proceeding with build."
+              echo "skip=false" >> "${GITHUB_ENV}"
+          fi
+      # Check if we should skip the build based on the previous step
+      - name: Skip Build
+        if: env.skip == 'true'
+        run: echo "Skipping the build as there were changes in ignored paths and the last commit is less than a day old."
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
+        if: env.skip != 'true' # Only run if skip is not true
         uses: blue-build/github-action@v1.6
         with:
           recipe: ${{ matrix.recipe }}
