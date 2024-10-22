@@ -28,8 +28,6 @@ jobs:
           # !! Add your recipes here
           - hyprland/blublu-hyprland.yml
           - tesla/blublu-hyprland-tesla.yml
-          #- kde/blublu-kde.yml
-          #- tesla/blublu-kde-tesla.yml
           #- cosmic/blublu-cosmic.yml
           #- tesla/blublu-cosmic-tesla.yml
     steps:

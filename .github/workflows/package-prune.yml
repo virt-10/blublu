@@ -25,5 +25,4 @@ jobs:
           names: |
             blublu-main
             blublu-hyprland
-            blublu-kde
             blublu-cosmic

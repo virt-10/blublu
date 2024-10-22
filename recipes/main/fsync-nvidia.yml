@@ -22,6 +22,7 @@ modules:
     install:
       - v4l2loopback
       - xone
+  - from-file: common/common-scripts.yml
   - type: script
     scripts:
       - build-initramfs.sh

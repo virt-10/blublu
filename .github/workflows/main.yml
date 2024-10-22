@@ -12,7 +12,6 @@ on:
       - "recipes/hyprland/*"
       - "recipes/tesla/*"
       - "recipes/cosmic/*"
-      - "recipes/kde/*"
 
   pull_request:
   workflow_dispatch: # allow manually triggering builds
@@ -31,9 +30,6 @@ jobs:
           # !! Add your recipes here
           - main/fsync-nvidia-open.yml
           - main/fsync-nvidia.yml
-          #- main/fsync-kinoite-nvidia-open.yml
-          #- main/fsync-kinoite-nvidia.yml
-          #- main/cachyos-kernel-nvidia-open.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
